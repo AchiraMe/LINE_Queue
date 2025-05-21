@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+/*Font*/
+.mitrregular {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+}
+.texthead {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+
+}
+.textlabel {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+}
+.textlabelshop {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+.textlabelcart {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: white;
+}
+.formcontrol {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+/* CardComponent.module.css */
+.cardContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.customCard {
+    margin: 10px;
+    flex: 1 1 auto;
+    align-items: center;
+    border: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.01s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.customCard:hover {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.cardImage {
+    width: 80%;
+    height: 100px;
+    object-fit: cover;
+}
+.cardBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.cardcontainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: calc(100% / 9);
+    box-sizing: border-box; 
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+@media (max-width: 1200px) {
+    .cardcontainer {
+        width: calc(100% / 6);
+    }
+}
+
+@media (max-width: 992px) {
+    .cardcontainer {
+        width: calc(100% / 4);
+    }
+}
+
+@media (max-width: 768px) {
+    .cardcontainer {
+        width: calc(100% / 3);
+    }
+}
+
+@media (max-width: 576px) {
+    .cardcontainer {
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 375px) {
+    .cardcontainer {
+        width: 100%;
+    }
+}
+.cardcontainer:hover {
+    transform: scale(1.03);
+}     
+/* Media Queries */
+@media (min-width: 100px) {
+    .customCard {
+        width: 10.3rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 300px) {
+    .customCard {
+        width: 8rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 400px) {
+    .customCard {
+        width: 9rem;
+        height: 12rem;
+    }
+}
+@media (min-width: 500px) {
+    .customCard {
+        width: 10.3rem;
+        height: 12rem;
+    }
+}
+@media (min-width: 700px) {
+    .customCard {
+        width: 9.5rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .customCard {
+        width: 8rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .customCard {
+        width: 8rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .customCard {
+        width: 8rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 1900px) and (max-width: 2000px) {
+    .customCard {
+        width: 9rem;
+        height: 12rem;
+    }
+}
+
+/* Cardlistmenu */
+.cardContainerlist {
+    margin: 0;
+    padding: 0;
+}
+
+.customCardlist {
+    align-items: center;
+    border: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.01s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px; /* เพิ่ม padding บนเพื่อให้รูปภาพลงมาหน่อย */
+    margin: 10px;
+    flex: 1 1 auto;
+}
+
+.cardImagelist {
+    width: 80%;
+    height: 120px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .customCardlist {
+        width: 11rem;
+        height: 16rem;
+    }
+}
+@media (min-width: 2000px) {
+    .customCardlist {
+        width: 13.5rem;
+        height: 16rem;
+    }
+}
+/* HTML: <div classname="loader"></div> */
+.loader {
+    --w:10ch;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    line-height: 1.4em;
+    letter-spacing: var(--w);
+    width: var(--w);
+    overflow: hidden;
+    white-space: nowrap;
+    color: #0000;
+    text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000;
+    animation: l20 2s infinite linear;
+  }
+  .loader:before {
+    content:"กำลังโหลด...";
+  }
+  
+  @keyframes l20 {
+    9.09% {text-shadow: 
+          calc( 0*var(--w)) -10px #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    18.18% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) -10px #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    27.27% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) -10px #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    36.36% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) -10px #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    45.45% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) -10px #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    54.54% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) -10px #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    63.63% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) -10px #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    72.72% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) -10px #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) 0 #000}
+    81.81% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) -10px #000,calc(-9*var(--w)) 0 #000}
+    90.90% {text-shadow: 
+          calc( 0*var(--w)) 0 #000,calc(-1*var(--w)) 0 #000,calc(-2*var(--w)) 0 #000,calc(-3*var(--w)) 0 #000,calc(-4*var(--w)) 0 #000, 
+          calc(-5*var(--w)) 0 #000,calc(-6*var(--w)) 0 #000,calc(-7*var(--w)) 0 #000,calc(-8*var(--w)) 0 #000,calc(-9*var(--w)) -10px #000}
+  }
