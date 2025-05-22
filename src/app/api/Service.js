@@ -35,18 +35,20 @@ export default class Service {
         }
         return data;
     }
-
     registerLineUser = async (name, lineId) => {
+        var config = {
+            headers: {
+                "Accept": "application/json"
+            }
+        };
         let data = '';
         let formData = new FormData();
         formData.append("method", "userline");
         formData.append("name", name);
         formData.append("lineId", lineId);
-
         try {
             data = await axios.post(Url, formData, config);
         } catch (e) {
-            console.error("Register Error:", e);
         }
         return data;
     }
