@@ -1,11 +1,12 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-import Service from './api/Service'; // 👈 เพิ่ม import Service
+import Service from './api/Service'; // ✅ import class ที่เขียนไว้แล้ว
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
   const [lineId, setLineId] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -13,16 +14,17 @@ export default function RegisterPage() {
     if (lid) setLineId(lid);
   }, []);
 
-  const handleSubmit = async () => {
+  const handleRegister = async () => {
     if (!name || !lineId) {
       return Swal.fire('ข้อมูลไม่ครบ', 'กรุณากรอกชื่อ และตรวจสอบ LINE ID', 'warning');
     }
 
-    const service = new Service();
-    const res = await service.registerLineUser(name, lineId);
+    setLoading(true);
+    const res = await new Service().registerLineUser(name, lineId);
+    setLoading(false);
 
-    if (res && res.status === 200) {
-      Swal.fire('ลงทะเบียนสำเร็จ', 'ข้อมูลถูกบันทึกแล้ว', 'success').then(() => {
+    if (res?.data?.status === '1') {
+      Swal.fire('สำเร็จ', 'ลงทะเบียนเรียบร้อยแล้ว', 'success').then(() => {
         window.location.href = '/';
       });
     } else {
@@ -31,31 +33,37 @@ export default function RegisterPage() {
   };
 
   return (
-    <div style={{ padding: 30 }}>
-      <h2>ลงทะเบียนผู้ใช้</h2>
-      <div className="form-group mt-3">
+    <div style={{ maxWidth: 400, margin: '100px auto', padding: 20 }}>
+      <h2 style={{ marginBottom: 20 }}>ลงทะเบียนผู้ใช้</h2>
+
+      <div className="form-group">
         <label>ชื่อพนักงาน</label>
         <input
+          type="text"
           className="form-control"
           value={name}
+          placeholder="เช่น สมชาย ใจดี"
           onChange={(e) => setName(e.target.value)}
-          placeholder="กรอกชื่อ"
         />
       </div>
+
       <div className="form-group mt-3">
-        <label>Line ID</label>
+        <label>LINE ID</label>
         <input
+          type="text"
           className="form-control"
           value={lineId}
           disabled
         />
       </div>
+
       <button
         className="btn btn-primary mt-4"
-        onClick={handleSubmit}
-        style={{ width: 200 }}
+        style={{ width: '100%' }}
+        onClick={handleRegister}
+        disabled={loading}
       >
-        ลงทะเบียน
+        {loading ? 'กำลังบันทึก...' : 'ลงทะเบียน'}
       </button>
     </div>
   );
